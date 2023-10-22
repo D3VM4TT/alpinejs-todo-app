@@ -1,0 +1,7 @@
+For our todo app, a user:
+    -> Should be able to add a todo
+    -> Should be able to see a list of todos
+    -> Should be able to delete a todo
+    -> Should be able to mark a todo as complete
+    -> Should be able to cleat the entire list of todos
+    -> Should be able to see number of todos and number of completed todos
