@@ -80,23 +80,22 @@
 
       <div class="bg-red-400 text-center" x-show="todos.length === 0"> No Task Found</div>
 
-      <div class="flex items-center w-full h-8 px-2 mt-2 text-sm font-medium rounded">
-        <button
-                type="button"
-                @click="todos.push({ title: newTodo, completed: false }); newTodo = ''">
+      <form
+              class="flex items-center w-full h-8 px-2 mt-2 text-sm font-medium rounded"
+              x-on:submit.prevent
+      >
+        <button x-on:click="todos.push({ title: newTodo, completed: false }); newTodo = ''">
           <svg class="w-5 h-5 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none"
                viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
-
         </button>
         <input
-                x-on:keyup.enter="todos.push({ title: newTodo, completed: false }); newTodo = ''"
                 x-model="newTodo"
                 class="flex-grow h-8 ml-4 bg-transparent focus:outline-none font-medium"
                 type="text"
                 placeholder="add a new task">
-      </div>
+      </form>
 
     </div>
   </div>
