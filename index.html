@@ -29,6 +29,9 @@
           <h4 class="font-semibold ml-3 text-lg">TODO's</h4>
         </div>
 
+        <h4 class="font-semibold ml-3 text-lg"
+            x-text="`${todos.filter(todo => todo.completed).length}/${todos.length}`"></h4>
+
         <button
                 type="button"
                 @click="todos = []"
@@ -74,6 +77,8 @@
           </li>
         </template>
       </ul>
+
+      <div class="bg-red-400 text-center" x-show="todos.length === 0"> No Task Found</div>
 
       <div class="flex items-center w-full h-8 px-2 mt-2 text-sm font-medium rounded">
         <button
